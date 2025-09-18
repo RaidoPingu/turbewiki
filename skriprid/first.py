@@ -22,3 +22,37 @@ print (name [6:]) # hakkab 6positsioonist
 print (name [:5]) # Algusest esimesed 4 tähte
 print (name [::-1]) # kirjutab tagurpidi.
 
+age =int(input('Sisesta vanus: '))
+
+if age < 1 or age > 123:
+    print('Vanus on vales vahemikus, lubatud on 1-122')
+elif age < 18:
+    print ('Alakas!')
+elif age < 65:
+    print('Tööealine')
+elif age < 100:
+    print ('pensionäär')
+else:
+    print('pikaealised')
+"""
+Mitmerealine kommentaar
+
+    """
+    
+place = input('Sisesta elukoht: ')
+print(f'Sisestati {place}')
+
+if len(place) > 1 and len(place) <= 7:
+    print(f'Lühikese nimega koht {place.title()}')
+elif len(place) > 7:
+    print(f'Pika nimega koht {place.title()}')
+else:
+    print ('Koht liiga lühike')
+
+# väljastaja muutujate andmetüübid
+
+print(type(name))
+print(type(age))
+print(type(height))
+print(type(place))
+
