@@ -45,3 +45,4 @@ for x in range(len(names)):
     print(str(x+1) + '. ' +  names[x] + ' ' +str (ages[x]))
 print(names)
 print(ages)
+
