@@ -51,4 +51,11 @@ with open(src, 'r', encoding='utf-8') as f: # Avame lugemiseks faili
                 username = '.'.join([first_name, last_name]).lower() # Paneme ees ja perenime kokku
                 username = strip_accents(username) #eemaldame rõhud ja täpitähed
 
-                print(row[0], row [1], first_name, last_name, username)
+                #EPosti loomine
+                email = username + domain
+
+                # Kirjutame faili
+                new_line = ';'.join(row[:2] + [row[-1], username, email])
+                d.write(new_line +'\n')
+                
+                
