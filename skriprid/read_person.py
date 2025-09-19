@@ -33,5 +33,22 @@ def strip_accents(s):
 with open(src, 'r', encoding='utf-8') as f: # Avame lugemiseks faili
    with open(dst, 'w', encoding='utf-8') as d: # avame kirjutamiseks faili
         contents = csv.reader(f, delimiter=';') #loetav fail loetakse muutujasse läbi csv readeri
-          
+        d.write(header + '\n') # Kirjutame faili headeri ja reavahetuse
+        next(contents) #vii lugemis järg järgmisele reale
+        
+        for row in contents:
+            date = row[2] # Kuupäev eraldi muutujasse
+            year = int(date.split('.')[2]) # võtame aasta välja kuupäevast
+            if year >= 1990 and year <= 1999:
+                first_name=row[0] #Eesnimi eraldi
+                last_name=row[1] #Perenimi eraldi
 
+                #Eemalda tühik ja sidekriips
+                first_name = first_name.replace(' ', '') #Eemaldame tühikud
+                first_name = first_name.replace('-', '') # Eemaldame Sidekriipsud
+
+                #Kasutjanime loomine
+                username = '.'.join([first_name, last_name]).lower() # Paneme ees ja perenime kokku
+                username = strip_accents(username) #eemaldame rõhud ja täpitähed
+
+                print(row[0], row [1], first_name, last_name, username)
