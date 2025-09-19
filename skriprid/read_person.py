@@ -32,6 +32,6 @@ def strip_accents(s):
 
 with open(src, 'r', encoding='utf-8') as f: # Avame lugemiseks faili
    with open(dst, 'w', encoding='utf-8') as d: # avame kirjutamiseks faili
-      contents = csv.reader(f, delimiter=';') #loetav fail loetakse muutujasse läbi csv readeri
-      
+        contents = csv.reader(f, delimiter=';') #loetav fail loetakse muutujasse läbi csv readeri
+          
 
