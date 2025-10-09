@@ -36,7 +36,7 @@ def introduce(name, age=25):
     return f'Tema on {name} ja ta on {age} aastane!'
 
 
-
+division()
 welcome()
 print(welcome_name('Raido'))
 num1 = 10
