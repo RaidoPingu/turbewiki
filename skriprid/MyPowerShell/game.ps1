@@ -8,7 +8,7 @@ $pc_nr = Get-Random -Minimum 1 -Maximum 100
 [System.Boolean]$game_over = $false
 $Global:steps = 0 #Globaalne muutuja sammud
 $filename = Join-Path -Path $PSScriptRoot -ChildPath "result.txt"
-Write-Host $pc_nr $filename # Kontrolliks
+# Write-Host $pc_nr $filename # Kontrolliks
 
 function writeToFile{
     $name = Read-Host "Mängija nimi"
@@ -42,8 +42,17 @@ function LetsPlay{
 
 while($game_over -eq $false){
     $game_over = LetsPlay
+    if($game_over){
+        writeToFile
+        Show-Scoreboard
+        $anwser = Read-Host("Kas mängime veel? [J/E]")
+        if ($anwser -eq "j") {
+            $pc_nr = Get-Random -Minimum 1 -Maximum 100
+            [System.Boolean]$game_over = $false
+            $Global:steps = 0
+        }
+    }
 }
 
-#LetsPlay
-#writeToFile
-#Show-Scoreboard
+Write-Host "Mäng Läbi"
+
