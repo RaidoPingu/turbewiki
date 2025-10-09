@@ -13,3 +13,9 @@ if($username -eq $env:USERNAME){
 } else {
      Write-Host "Vale kasutajanimi $username, eeldati $env:USERNAME "
 }
+[int]$year = Read-Host "Sisest Aasta"
+if($year -eq (Get-Date).Year){
+    Write-Host "Käesolev Aasta"
+} Else{
+    Write-Host "mõni teine aasta : $year"
+}
