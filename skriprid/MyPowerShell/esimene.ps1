@@ -37,3 +37,23 @@ $num += 3
 $num += Get-Random -Minimum 1 -Maximum 10
 
 Write-Host $num
+
+
+<# 
+Liida kokku 2 juhuslikku numbrit. Mõlemad vahemikus 1-10 .
+Vastus on muutujas  $random
+#>
+
+$random = 0
+$random1 = Get-Random -Minimum 1 -Maximum 10 
+Write-Host $random1
+$random2 = Get-Random -Minimum 1 -Maximum 10
+Write-Host $random2
+$random = $random1 + $random2
+
+Write-Host $random
+# Sama asi:
+$random = (Get-Random -Minimum 1 -Maximum 10) + (Get-Random -Minimum 1 -Maximum 10)
+
+Write-Host $random
+
