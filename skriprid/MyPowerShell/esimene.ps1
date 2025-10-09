@@ -19,3 +19,21 @@ if($year -eq (Get-Date).Year){
 } Else{
     Write-Host "mõni teine aasta : $year"
 }
+
+
+#Masiiv
+$nums = @() #Tühi masiiv
+$nums += 5
+$nums += 2
+$nums += 6
+$nums += Get-Random -Minimum 1 -Maximum 10
+
+Write-Host $nums # Väljastab masiivi
+Write-Host $nums[-1] #Võtab viimase numberi masiivist
+Write-Host $nums[$nums.Length-1] #Võtab samuti viimase numbri masiivist
+$num = 0 # Algväärtustamine
+$num += 5
+$num += 3
+$num += Get-Random -Minimum 1 -Maximum 10
+
+Write-Host $num
